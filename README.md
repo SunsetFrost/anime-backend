@@ -1,6 +1,7 @@
-# hackernews-async-ts
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/SunsetFrost/anime-backend) 
 
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+# Anime backend
+Based on Egg + Typescript, use anilist api.
 
 ## QuickStart
 
