@@ -35,19 +35,7 @@ export default class Anilist extends Service {
       perpage,
     };
 
-    const url = 'http://sunsetfrost.com/api';
-    // const options = {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Accept: 'application/json',
-    //   },
-    //   data: {
-    //     query,
-    //     variables,
-    //   },
-    //   dataType: 'json',
-    //   method: 'POST' || undefined,
-    // };
+    const url = 'https://graphql.anilist.co';
     const result = await ctx.curl(url, {
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +48,7 @@ export default class Anilist extends Service {
       dataType: 'json',
       method: 'POST' || undefined,
     });
-    console.log(result);
+
     return result.data;
   }
 }
