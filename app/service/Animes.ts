@@ -1,8 +1,25 @@
 import { Service } from 'egg';
 
-export default class Anilist extends Service {
-  public async getAllAnime(page: number, perpage: number) {
-    const ctx = this.ctx;
+export default class AnimeService extends Service {
+  private async fetch(query: Object, variables: Object) {
+    const { ctx } = this;
+    const url = 'https://graphql.anilist.co';
+    const result = await ctx.curl(url, {
+    headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+    },
+    data: {
+        query,
+        variables,
+    },
+    dataType: 'json',
+    method: 'POST',
+    });
+    return result;
+  }
+
+  public async list(page: number, perpage: number) {
     const query = `
     query($page: Int, $perpage: Int) {
       Page(page: $page, perPage: $perpage) {
@@ -34,21 +51,12 @@ export default class Anilist extends Service {
       page,
       perpage,
     };
-
-    const url = 'https://graphql.anilist.co';
-    const result = await ctx.curl(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      data: {
-        query,
-        variables,
-      },
-      dataType: 'json',
-      method: 'POST' || undefined,
-    });
+    const result = await this.fetch(query, variables);
 
     return result.data;
+  }
+
+  public async detail(id) {
+      return { id};
   }
 }

@@ -2,12 +2,12 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportAnilist from '../../../app/controller/anilist';
+import ExportAnimes from '../../../app/controller/animes';
 import ExportHome from '../../../app/controller/home';
 
 declare module 'egg' {
   interface IController {
-    anilist: ExportAnilist;
+    animes: ExportAnimes;
     home: ExportHome;
   }
 }

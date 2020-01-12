@@ -2,12 +2,12 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportAnilist from '../../../app/service/Anilist';
+import ExportAnimes from '../../../app/service/Animes';
 import ExportTest from '../../../app/service/Test';
 
 declare module 'egg' {
   interface IService {
-    anilist: ExportAnilist;
+    animes: ExportAnimes;
     test: ExportTest;
   }
 }
