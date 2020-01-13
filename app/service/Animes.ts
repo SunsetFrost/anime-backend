@@ -57,6 +57,37 @@ export default class AnimeService extends Service {
   }
 
   public async detail(id) {
-      return { id};
+    const query = `
+    query ($id: Int) {
+      Media(id: $id, type: ANIME) {
+        id
+        title {
+          romaji
+          english
+          native
+        }
+        source
+        episodes
+        seasonYear
+        season
+        description
+        isAdult
+        genres
+        coverImage {
+          large
+          medium
+          color
+        }
+        bannerImage
+      }
+    }
+    `;
+
+    const variables = {
+      id
+    }
+    const result = await this.fetch(query, variables);
+    console.log(result.data);
+    return result.data;
   }
 }
