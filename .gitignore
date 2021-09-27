@@ -11,6 +11,10 @@ logs/
 *.lock
 *.js
 !.autod.conf.js
+.github/
+sprites/
+yarn-error.log
+.yarnrc
 
 app/**/*.js
 test/**/*.js

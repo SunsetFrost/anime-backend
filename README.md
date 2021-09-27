@@ -1,7 +1,19 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/SunsetFrost/anime-backend) 
 
 # Anime backend
-Based on Egg + Typescript, use anilist api.
+A simple demo server Based on Egg + Typescript, get interesting ACG data provided by third-party.
+
+- [Anime backend](#anime-backend)
+  - [QuickStart](#quickstart)
+    - [Development](#development)
+    - [Deploy](#deploy)
+    - [Npm Scripts](#npm-scripts)
+    - [Requirement](#requirement)
+  - [Anilist](#anilist)
+  - [Pokemon](#pokemon)
+    - [Pokemon GraphQL Bug](#pokemon-graphql-bug)
+    - [采用将图片缓存到本地](#采用将图片缓存到本地)
+  - [Code Format](#code-format)
 
 ## QuickStart
 
@@ -32,3 +44,27 @@ $ npm start
 
 - Node.js 8.x
 - Typescript 2.8+
+
+## Anilist
+- use api provided by https://github.com/AniList/ApiV2-GraphQL-Docs  
+- use GraphQL to request data
+
+## Pokemon
+- use api provided by https://beta.pokeapi.co/graphql/console/  
+- use GraphQL to request data
+
+### Pokemon GraphQL Bug
+cannot find the picture data of pokemon, only get null
+```
+{"id":1,"sprites":"{\"front_default\": null, \"front_female\": null, \"front_shiny\": null, \"front_shiny_female\": null, \"back_default\": null, \"back_female\": null, \"back_shiny\": null, \"back_shiny_female\": null, \"other\": {\"dream_world\": {\"front_default\": null, \"front_female\": null}, \"official-artwork\": {\"front_default\": null}}, \"versions\": {\"generation-i\": {\"red-blue\": {\"front_default\": null, \"front_gray\": null, \"back_default\": null, \"back_gray\": null}
+```
+
+- find out it's a bug
+https://github.com/PokeAPI/pokeapi/issues/614
+
+
+### 采用将图片缓存到本地
+https://github.com/PokeAPI/sprites#sprites
+
+## Code Format
+tslint + prettier

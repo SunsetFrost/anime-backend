@@ -1,13 +1,15 @@
-// This file is created by egg-ts-helper@1.25.6
+// This file is created by egg-ts-helper@1.27.0
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportAnimes from '../../../app/controller/animes';
+import ExportAnime from '../../../app/controller/anime';
 import ExportHome from '../../../app/controller/home';
+import ExportPokemon from '../../../app/controller/pokemon';
 
 declare module 'egg' {
   interface IController {
-    animes: ExportAnimes;
+    anime: ExportAnime;
     home: ExportHome;
+    pokemon: ExportPokemon;
   }
 }

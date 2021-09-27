@@ -4,7 +4,7 @@ export default class AnimeController extends Controller {
   public async index() {
     const { ctx } = this;
     const { page, perpage } = ctx.request.queries;
-    ctx.body = await ctx.service.animes.list(
+    ctx.body = await ctx.service.anime.list(
       Number(page),
       Number(perpage),
     );
@@ -12,6 +12,6 @@ export default class AnimeController extends Controller {
   public async show() {
       const { ctx } = this;
       const { id } = ctx.request.queries;
-      ctx.body = await ctx.service.animes.detail(id);
+      ctx.body = await ctx.service.anime.detail(id);
   }
 }

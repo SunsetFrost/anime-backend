@@ -1,13 +1,19 @@
-// This file is created by egg-ts-helper@1.25.6
+// This file is created by egg-ts-helper@1.27.0
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportAnimes from '../../../app/service/Animes';
+type AnyClass = new (...args: any[]) => any;
+type AnyFunc<T = any> = (...args: any[]) => T;
+type CanExportFunc = AnyFunc<Promise<any>> | AnyFunc<IterableIterator<any>>;
+type AutoInstanceType<T, U = T extends CanExportFunc ? T : T extends AnyFunc ? ReturnType<T> : T> = U extends AnyClass ? InstanceType<U> : U;
+import ExportAnime from '../../../app/service/Anime';
+import ExportPokemon from '../../../app/service/Pokemon';
 import ExportTest from '../../../app/service/Test';
 
 declare module 'egg' {
   interface IService {
-    animes: ExportAnimes;
-    test: ExportTest;
+    anime: AutoInstanceType<typeof ExportAnime>;
+    pokemon: AutoInstanceType<typeof ExportPokemon>;
+    test: AutoInstanceType<typeof ExportTest>;
   }
 }

@@ -5,17 +5,18 @@ export default class AnimeService extends Service {
     const { ctx } = this;
     const url = 'https://graphql.anilist.co';
     const result = await ctx.curl(url, {
-    headers: {
+      headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-    },
-    data: {
+      },
+      data: {
         query,
         variables,
-    },
-    dataType: 'json',
-    method: 'POST',
+      },
+      dataType: 'json',
+      method: 'POST',
     });
+    console.log('result', result);
     return result;
   }
 
@@ -84,8 +85,8 @@ export default class AnimeService extends Service {
     `;
 
     const variables = {
-      id
-    }
+      id,
+    };
     const result = await this.fetch(query, variables);
     console.log(result.data);
     return result.data;
