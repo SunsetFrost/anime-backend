@@ -13,12 +13,13 @@ A simple demo server Based on Egg + Typescript, get interesting ACG data provide
   - [Pokemon](#pokemon)
     - [Pokemon GraphQL Bug](#pokemon-graphql-bug)
     - [采用将图片缓存到本地](#采用将图片缓存到本地)
+  - [Nginx图片服务器](#nginx图片服务器)
+    - [Docker部署Nginx](#docker部署nginx)
   - [Code Format](#code-format)
 
 ## QuickStart
 
 ### Development
-
 ```bash
 $ npm i
 $ npm run dev
@@ -65,6 +66,14 @@ https://github.com/PokeAPI/pokeapi/issues/614
 
 ### 采用将图片缓存到本地
 https://github.com/PokeAPI/sprites#sprites
+
+## Nginx图片服务器
+### Docker部署Nginx
+```bash
+// 拉取镜像
+docker pull nginx:stable
+
+```
 
 ## Code Format
 tslint + prettier
