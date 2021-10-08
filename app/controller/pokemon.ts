@@ -1,6 +1,6 @@
 import { Controller } from 'egg';
-import { readFileSync } from 'fs';
-import * as path from 'path';
+// import { readFileSync } from 'fs';
+// import * as path from 'path';
 
 export default class PokemonController extends Controller {
   public async index() {
@@ -10,19 +10,19 @@ export default class PokemonController extends Controller {
       Number(page),
       Number(perpage),
     );
-    const resWithImage = res.map(i => this.getLocalImage(i));
+    // const resWithImage = res.map(i => this.getLocalImage(i));
 
-    ctx.body = resWithImage;
+    ctx.body = res;
   }
 
-  private getLocalImage(pokemon) {
-    const { id } = pokemon;
-    const imgPath = path.join(__dirname, `../../sprites/sprites/pokemon/${id}.png`) ;
-    const imgData = readFileSync(imgPath);
-    const newPokemon = {
-      ...pokemon,
-      img: imgData.toString('base64'),
-    };
-    return newPokemon;
-  }
+  // private getLocalImage(pokemon) {
+  //   const { id } = pokemon;
+  //   const imgPath = path.join(__dirname, `../../sprites/sprites/pokemon/${id}.png`) ;
+  //   const imgData = readFileSync(imgPath);
+  //   const newPokemon = {
+  //     ...pokemon,
+  //     img: imgData.toString('base64'),
+  //   };
+  //   return newPokemon;
+  // }
 }

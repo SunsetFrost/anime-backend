@@ -15,6 +15,8 @@ A simple demo server Based on Egg + Typescript, get interesting ACG data provide
     - [采用将图片缓存到本地](#采用将图片缓存到本地)
   - [Nginx图片服务器](#nginx图片服务器)
     - [Docker部署Nginx](#docker部署nginx)
+  - [Nginx转发请求至本地端口](#nginx转发请求至本地端口)
+    - [转发至本地Egg后台端口](#转发至本地egg后台端口)
   - [Code Format](#code-format)
 
 ## QuickStart
@@ -73,6 +75,25 @@ https://github.com/PokeAPI/sprites#sprites
 // 拉取镜像
 docker pull nginx:stable
 
+```
+
+## Nginx转发请求至本地端口
+### 转发至本地Egg后台端口
+```
+server{
+  listen 80;
+  server_name  tomcat.shaochenfeng.com;
+  index  index.php index.html index.htm;
+
+  location / {
+    proxy_pass  http://127.0.0.1:8080; # 转发规则
+    proxy_set_header Host $proxy_host; # 修改转发请求头，让8080端口的应用可以受到真实的请求
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+}
+
+// 在配置proxy_pass代理转发时，如果后面的url加/，表示绝对根路径；如果没有/，表示相对路径
 ```
 
 ## Code Format

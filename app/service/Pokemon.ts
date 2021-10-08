@@ -21,7 +21,7 @@ export default class PokemonService extends Service {
 
   public async list(page: number, perpage: number) {
     const limit = perpage;
-    const offset = page * perpage;
+    const offset = (page - 1) * perpage;
 
     const query = `
       query($limit: Int, $offset: Int) {

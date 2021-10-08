@@ -15,9 +15,14 @@ export default (appInfo: EggAppInfo) => {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   };
 
+  const security = {
+    domainWhiteList: [ 'http://127.0.0.1:9100' ],
+  };
+
   // the return config will combines to EggAppConfig
   return {
     ...config,
     ...bizConfig,
+    ...security,
   };
 };
