@@ -40,3 +40,31 @@ export default class PokemonService extends Service {
     return result.data;
   }
 }
+
+/* 
+  列表查询
+  query samplePokeAPIquery {
+  # pokemon_v2_language(where: {name: {_eq: "zh-Hans"}}) {
+    pokemon_v2_pokemonspecies (limit: 12) {
+      pokemon_v2_pokemonspeciesnames(where: {language_id: {_eq: 4}}) {
+      	name,
+      },
+      pokemon_v2_pokemons {
+        id
+				name,
+        pokemon_v2_pokemontypes {
+          pokemon_v2_type {
+            name,
+          }
+        },
+        pokemon_v2_pokemonstats_aggregate {
+          aggregate {
+            sum {
+              base_stat
+            }
+          }
+        }
+      }
+    },
+  }
+*/
