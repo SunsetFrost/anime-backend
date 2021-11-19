@@ -5,11 +5,13 @@ import 'egg';
 import ExportAnime from '../../../app/controller/anime';
 import ExportHome from '../../../app/controller/home';
 import ExportPokemon from '../../../app/controller/pokemon';
+import ExportVideo from '../../../app/controller/video';
 
 declare module 'egg' {
   interface IController {
     anime: ExportAnime;
     home: ExportHome;
     pokemon: ExportPokemon;
+    video: ExportVideo;
   }
 }

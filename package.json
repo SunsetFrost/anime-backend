@@ -23,6 +23,7 @@
     "proxy-dev": "EGG_SERVER_ENV=proxy egg-bin dev"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "egg": "^2.6.1",
     "egg-cors": "^2.2.3",
     "egg-scripts": "^2.6.0",
