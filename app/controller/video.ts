@@ -20,6 +20,6 @@ export default class VideoController extends Controller {
     const imageId = ctx.params.imageid;
     const imageStream = await ctx.service.video.image(imageId);
     ctx.body = imageStream;
-    ctx.response.set('content-type', 'image/jpg');
+    ctx.response.type = 'image/jpeg';
   }
 }
