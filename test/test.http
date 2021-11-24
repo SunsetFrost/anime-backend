@@ -21,3 +21,7 @@ GET http://127.0.0.1:7001/api/v1/video/372058
 ### 图片
 GET http://127.0.0.1:7001/api/v1/video/image/q719jXXEzOoYaps6babgKnONONX
 
+## music
+
+### 列表页
+GET http://127.0.0.1:7001/api/v1/music

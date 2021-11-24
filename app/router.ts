@@ -7,4 +7,5 @@ export default (app: Application) => {
   router.resources('pokemon', '/api/v1/pokemon', controller.pokemon);
   router.resources('video', '/api/v1/video', controller.video);
   router.get('/api/v1/video/image/:imageid', controller.video.image);
+  router.resources('music', '/api/v1/music', controller.music);
 };

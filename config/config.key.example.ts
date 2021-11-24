@@ -3,6 +3,7 @@ export default {
     key: '',
   },
   spotify: {
-    key: '',
+    clientID: '',
+    clientSecret: '',
   },
 };
