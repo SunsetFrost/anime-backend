@@ -10,6 +10,7 @@ import ExportAnime from '../../../app/service/Anime';
 import ExportPokemon from '../../../app/service/Pokemon';
 import ExportTest from '../../../app/service/Test';
 import ExportVideo from '../../../app/service/Video';
+import ExportMusic from '../../../app/service/music';
 
 declare module 'egg' {
   interface IService {
@@ -17,5 +18,6 @@ declare module 'egg' {
     pokemon: AutoInstanceType<typeof ExportPokemon>;
     test: AutoInstanceType<typeof ExportTest>;
     video: AutoInstanceType<typeof ExportVideo>;
+    music: AutoInstanceType<typeof ExportMusic>;
   }
 }

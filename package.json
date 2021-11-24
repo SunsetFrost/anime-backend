@@ -11,7 +11,7 @@
     "start": "egg-scripts start --daemon --title=egg-server-anime-backend",
     "stop": "egg-scripts stop --title=egg-server-anime-backend",
     "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
+    "debug": "egg-bin debug --inspect",
     "test-local": "egg-bin test",
     "test": "npm run lint -- --fix && npm run test-local",
     "cov": "egg-bin cov",
@@ -20,7 +20,8 @@
     "autod": "autod",
     "lint": "tslint --project . -c tslint.json",
     "clean": "ets clean",
-    "proxy-dev": "EGG_SERVER_ENV=proxy egg-bin dev"
+    "proxy-dev": "EGG_SERVER_ENV=proxy egg-bin dev",
+    "key-dev": "EGG_SERVER_ENV=key egg-bin dev"
   },
   "dependencies": {
     "axios": "^0.24.0",

@@ -3,8 +3,8 @@ import { Service } from 'egg';
 
 export default class VideoService extends Service {
   public async list(page: number) {
-    const { ctx } = this;
-    const url =  `https://api.themoviedb.org/3/movie/popular?page=${page}&api_key=fa04a17bc22dc1de7776f598ba12b3f2&language=zh-CN`;
+    const { ctx, config } = this;
+    const url = `https://api.themoviedb.org/3/movie/popular?page=${page}&api_key=${config.tmdb.key}&language=zh-CN`;
 
     const response = await ctx.proxyRequest(url, {
       timeout: 10000,
@@ -15,8 +15,8 @@ export default class VideoService extends Service {
   }
 
   public async detail(id: number) {
-    const { ctx } = this;
-    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=fa04a17bc22dc1de7776f598ba12b3f2&language=zh-CN`;
+    const { ctx, config } = this;
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${config.tmdb.key}&language=zh-CN`;
     const { data } = await ctx.proxyRequest(url);
     return data;
   }
