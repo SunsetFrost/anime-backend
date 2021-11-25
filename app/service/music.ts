@@ -25,8 +25,39 @@ export default class MusicService extends Service {
     return data;
   }
 
-  // public async list(page: number, auth: string) {
-  //   const { ctx } = this;
-  //   const url = ``;
-  // }
+  public async list(query: string, auth: string) {
+    const { ctx } = this;
+    const url = `https://api.spotify.com/v1/search?type=album&include_external=audio&q=artist:${query}`;
+    const response = await ctx.proxyRequest(url, {
+      headers: {
+        Authorization: auth,
+      },
+    });
+
+    const { data } = response;
+    return data;
+  }
+
+  public async detail(albumId: string, auth: string) {
+    const { ctx } = this;
+    const url = `https://api.spotify.com/v1/albums/${albumId}/tracks`;
+    const response = await ctx.proxyRequest(url, {
+      headers: {
+        Authorization: auth,
+      },
+    });
+
+    const { data } = response;
+    return data;
+  }
+
+  public async image(id: string) {
+    const { ctx } = this;
+    const url = `https://i.scdn.co/image/${id}`;
+    const { data } = await ctx.proxyRequest(url, {
+      responseType: 'arraybuffer',
+    });
+    const buff = Buffer.from(data, 'utf-8');
+    return buff;
+  }
 }

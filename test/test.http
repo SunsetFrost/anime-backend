@@ -24,4 +24,10 @@ GET http://127.0.0.1:7001/api/v1/video/image/q719jXXEzOoYaps6babgKnONONX
 ## music
 
 ### 列表页
-GET http://127.0.0.1:7001/api/v1/music
+GET http://127.0.0.1:7001/api/v1/music?singer=one%20ok%20rock
+
+### 详情页
+GET http://127.0.0.1:7001/api/v1/music/0p1YL9nzIuKTonZH6Gq58i
+
+### 图片
+GET http://127.0.0.1:7001/api/v1/music/image/ab67616d0000b2730f94f53a1c9c60d953ffd2f2
