@@ -12,4 +12,7 @@ export default (app: Application) => {
 
   router.resources('music', '/api/v1/music', controller.music);
   router.get('/api/v1/music/image/:imageid', controller.music.image);
+
+  router.resources('book', '/api/v1/book', controller.book);
+  router.get('/api/v1/book/image/poster', controller.book.image);
 };

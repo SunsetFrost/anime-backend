@@ -6,4 +6,7 @@ export default {
     clientID: '',
     clientSecret: '',
   },
+  googlebook: {
+    key: '',
+  },  
 };

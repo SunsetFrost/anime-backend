@@ -31,3 +31,14 @@ GET http://127.0.0.1:7001/api/v1/music/0p1YL9nzIuKTonZH6Gq58i
 
 ### 图片
 GET http://127.0.0.1:7001/api/v1/music/image/ab67616d0000b2730f94f53a1c9c60d953ffd2f2
+
+## book
+
+### 列表
+GET http://127.0.0.1:7001/api/v1/book?q=Harry+Potter+inauthor:J. K. Rowling
+
+### 详情
+GET http://127.0.0.1:7001/api/v1/book/35rHBAAAQBAJ
+
+### 图片
+GET http://127.0.0.1:7001/api/v1/book/image/poster?id=35rHBAAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE704i1LOtkYlcXjjF36iuq8m6oadpqmq0rxQNmvGMX3PUxxbIl-H00Q080MeN9NQuS2FXjQnSwNSeRHOmvgHRvE2Hd1gcGmPe2-rP0ZwucHVt21v3RU4fns0-xuQm3mpjQ_RlO_P&source=gbs_api
