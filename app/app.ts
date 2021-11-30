@@ -1,7 +1,7 @@
 import { EggApplication } from 'egg';
 
 class AppBootHook {
-  constructor(app) {
+  constructor(app: EggApplication) {
     this.app = app;
   }
 
@@ -39,6 +39,7 @@ class AppBootHook {
 
     this.app.logger.info('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
     this.app.logger.info(`config info ${this.app.config}`);
+    console.log('fuckkkkkkkkkkkk');
   }
 
   async willReady() {
@@ -48,6 +49,7 @@ class AppBootHook {
 
     // For example: loading data from the database into the in-memory cache
     // this.app.cacheData = await this.app.model.query(QUERY_CACHE_SQL);
+    console.log('fuckkkkkkkkkkkk');
   }
 
   async didReady() {
@@ -55,6 +57,7 @@ class AppBootHook {
 
     const ctx = await this.app.createAnonymousContext();
     await ctx.service.Biz.request();
+    console.log('fuckkkkkkkkkkkk');
   }
 
   async serverDidReady() {
@@ -64,6 +67,7 @@ class AppBootHook {
     // this.app.server.on('timeout', socket => {
     //   // handle socket timeout
     // });
+    console.log('fuckkkkkkkkkkkk');
   }
 }
 

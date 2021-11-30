@@ -13,6 +13,7 @@ export default class VideoController extends Controller {
     const { ctx } = this;
     const id = parseInt(ctx.params.id, 10);
     ctx.body = await ctx.service.video.detail(id);
+    ctx.logger.info('video request', ctx.request.url);
   }
 
   public async image() {
